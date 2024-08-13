@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ event.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ event.title }}</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Date: {{ event.date.strftime('%Y-%m-%d') }}</h5>
+        <p class="card-text">{{ event.description }}</p>
+        <p class="card-text"><small class="text-muted">Created by: {{ event.user_id }}</small></p>
+    </div>
+</div>
+
+<a href="{{ url_for('events') }}" class="btn btn-secondary mt-3">Back to Events</a>
+{% endblock %}

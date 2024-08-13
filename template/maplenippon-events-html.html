@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Events{% endblock %}
+
+{% block content %}
+<h1>Upcoming Events</h1>
+
+{% if current_user.is_authenticated %}
+<a href="{{ url_for('create_event') }}" class="btn btn-primary mb-3">Create New Event</a>
+{% endif %}
+
+{% if events %}
+    <div class="row">
+    {% for event in events %}
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ event.title }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ event.date.strftime('%Y-%m-%d') }}</h6>
+                    <p class="card-text">{{ event.description[:100] }}...</p>
+                    <a href="{{ url_for('event_detail', event_id=event.id) }}" class="btn btn-info">View Details</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No events currently scheduled. Check back later or create a new event!</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,29 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+h1, h2, h3 {
+    color: #d00000;
+}
+
+.btn-primary {
+    background-color: #d00000;
+    border-color: #d00000;
+}
+
+.btn-primary:hover {
+    background-color: #a00000;
+    border-color: #a00000;
+}
